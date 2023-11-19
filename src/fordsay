@@ -22,7 +22,7 @@ print_bottom() {
 
 # Main function to create the fordsay output
 fordsay() {
-    local message=$1
+    local message="${1:-do de doo}"
 
     # Create speech bubble
     print_top "$message"
@@ -31,16 +31,10 @@ fordsay() {
 
     # Create ASCII art
     echo "     \\    _______"
-    echo "     \\  /|_||_\\`.__"
+    echo "     \\  /|_||_\\\`.__"
     echo "       (   _    _ _\\"
     echo "      =\`-(_)--(_)-'"
 }
 
-# Check if a message was provided
-if [ $# -eq 0 ]; then
-    local message="do de doo"
-    exit 1
-fi
-
 # Call fordsay function with the provided message
-fordsay "$1"
+fordsay "$@"
