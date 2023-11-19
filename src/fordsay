@@ -38,7 +38,7 @@ fordsay() {
 
 # Check if a message was provided
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 'Your message here'"
+    local message="do de doo"
     exit 1
 fi
 
